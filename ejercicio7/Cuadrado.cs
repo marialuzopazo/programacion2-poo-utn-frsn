@@ -1,19 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace EjerPOO7
 {
-   
-
     internal class Cuadrado : figura
     {
         private int _ladoA;
-                
+
         public Cuadrado()
         {
+            // Constructor por defecto
             this.colorRelleno = color.blanco;
             this.ladoA = 1;
             this.posicion = ubicacion.centro;
@@ -21,6 +14,7 @@ namespace EjerPOO7
 
         public Cuadrado(color colorRelleno, int ladoA, ubicacion posicion)
         {
+            // Constructor con parámetros
             this.colorRelleno = colorRelleno;
             this.ladoA = ladoA;
             this.posicion = posicion;
@@ -45,6 +39,5 @@ namespace EjerPOO7
         {
             get { return this.ladoA * this.ladoA; }
         }
-       
     }
 }
