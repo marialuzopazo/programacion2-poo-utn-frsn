@@ -1,18 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace EjerPOO7
 {
-    internal class Rectangulo: figura
+    internal class Rectangulo: figura // Hereda de figura
     {
         private int _ladoA;
         private int _ladoB;
 
         public Rectangulo()
         {
+            // Constructor por defecto
             this.colorRelleno = color.blanco;
             this.ladoA = 1;
             this.ladoB = 1;
@@ -21,12 +16,14 @@ namespace EjerPOO7
 
         public Rectangulo(color colorRelleno, int ladoA, int ladoB, ubicacion posicion)
         {
+            // Constructor personalizado con parámetros
             this.colorRelleno = colorRelleno;
             this.ladoA = ladoA;
             this.ladoB = ladoB;
             this.posicion = posicion;
         }
 
+        // Propiedad pública con validación
         public int ladoA
         {
             get { return this._ladoA; }
@@ -51,15 +48,19 @@ namespace EjerPOO7
             }
         }
 
+        // Implementación de propiedad abstracta: Perímetro
         public override int perimetro
         {
             get { return this.ladoA * 2 + this.ladoB * 2; }
         }
 
+        // Implementación de propiedad abstracta: Superficie
         public override int superficie
         {
             get { return this.ladoA * this.ladoB; }
         }
+
+        // Método para mostrar datos específicos del rectángulo
         public override void MostrarDatos()
         {
             Console.WriteLine($"Color: {this.colorRelleno}");
