@@ -1,5 +1,3 @@
-﻿using System;
-
 namespace EjerPOO7
 {
     public enum color
@@ -18,20 +16,18 @@ namespace EjerPOO7
         izquierda,
         centro
     }
+
     internal abstract class figura
     {
         private color _colorRelleno;
         private ubicacion _posicion;
 
-        public abstract int perimetro{
-            get;
-        }
+        // Propiedad abstracta: debe ser implementada por las clases hijas
+        public abstract int perimetro { get; }
 
-        public abstract int superficie
-        {
-            get;
-        }
+        public abstract int superficie { get; }
 
+        // Propiedad con acceso normal (no abstracta)
         public color colorRelleno
         {
             get { return this._colorRelleno; }
@@ -44,12 +40,12 @@ namespace EjerPOO7
             set { this._posicion = value; }
         }
 
+        // Método virtual que puede ser sobreescrito
         public virtual void MostrarDatos()
         {
             Console.WriteLine($"Color: {this.colorRelleno}");
             Console.WriteLine($"Posicion: {this.posicion.ToString()}");
         }
-
-
     }
 }
+
